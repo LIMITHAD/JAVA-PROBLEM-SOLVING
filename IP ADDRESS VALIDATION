@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner in=new Scanner(System.in);
+        String s=in.nextLine();
+        if(!s.matches("[0-9.]+")){
+            System.out.println("Invalid");
+            return;
+        }
+        String parts[]=s.split("\\.");
+        if(parts.length!=4){
+            System.out.println("Invalid");
+            return;
+        }
+        for(String part:parts){
+            if(part.length()==0){
+                System.out.println("Invalid");
+                return;
+            }
+            if(part.length()>1 && part.charAt(0)=='0'){
+                System.out.println("Invalid");
+                return;
+            }
+            int num=Integer.parseInt(part);
+            if(num<0 ||num>256){
+                System.out.println("Invalid");
+                return;
+             }
+        }
+        System.out.println("valid");
+    }
+}
