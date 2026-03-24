@@ -1,0 +1,42 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner in=new Scanner(System.in);
+        String s=in.nextLine();
+        int total=0;
+        for(int i=0;i<s.length();i++){
+          int value=0;
+          switch(s.charAt(i)){
+              case 'I':value=1;break;
+              case 'V':value=5;break;
+              case 'L':value=50;break;
+              case 'X':value=10;break;
+              case 'C':value=100;break;
+              case 'D':value=500;break;
+              case 'M':value=1000;break;
+          }
+          if(i+1<s.length()){
+              int value2=0;
+              switch(s.charAt(i+1)){
+              case 'I':value2=1;break;
+              case 'V':value2=5;break;
+              case 'L':value2=50;break;
+              case 'X':value2=10;break;
+              case 'C':value2=100;break;
+              case 'D':value2=500;break;
+              case 'M':value2=1000;break;
+          }
+          if(value<value2){
+              total-=value;
+          }
+          else{
+              total+=value;
+          }
+       }
+       else{
+           total+=value;
+       }
+    }
+    System.out.print(total);
+    }
+}
