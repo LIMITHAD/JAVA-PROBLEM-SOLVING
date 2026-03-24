@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner in=new Scanner(System.in);
+        String s=in.next();
+        String g=in.next();
+        int cow=0;
+        int bull=0;
+        int freq[]=new int[10];
+        for(int i=0;i<s.length();i++){
+           char a=s.charAt(i);
+           char b=g.charAt(i);
+            if(a==b){
+                bull++;
+            }
+            else{
+                if(freq[a-'0']<0){
+                    cow++;
+                }
+                if(freq[b-'0']>0){
+                    cow++;
+                }
+                freq[a-'0']++;
+                freq[b-'0']--;
+            }
+        }
+        System.out.println(bull+"A"+cow+"B");
+ 
+    }
+}
