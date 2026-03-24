@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner in=new Scanner(System.in);
+        String s=in.nextLine().toLowerCase();
+        s=s.replaceAll("[^a-z ]","");
+        String arr[]=s.split("\\s+");
+        int count=0;
+        for(String word:arr){
+            if(word.equals("an")|| word.equals("the") || word.equals("a") ){
+                count++;
+            }
+        }
+        System.out.println(count);
+ 
+    }
+}
