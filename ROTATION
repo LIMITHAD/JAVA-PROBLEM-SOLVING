@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner in=new Scanner(System.in);
+        String s=in.next();
+        int k=in.nextInt();
+        int n=s.length();
+        k=k%n;
+        String left=s.substring(k)+s.substring(0,k);
+        String right=s.substring(n-k)+s.substring(0,n-k);
+        System.out.println(left);
+        System.out.println(right);
+
+     for (int i = 0; i < s.length(); i++) {
+        String rotated = s.substring(i) + s.substring(0, i);
+        System.out.println(rotated);
+      }
+      for (int i = 0; i < s.length(); i++) {
+        String rotated = s.substring(n-i) + s.substring(0, n-i);
+        System.out.println(rotated);
+      }
+
+    }
+}
