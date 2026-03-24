@@ -1,0 +1,42 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[])P
+    Scanner in=new Scanner(System.in);
+    int n=in.nextInt();
+    int arr[]=new int[n];
+    for(int i=0;i<n;i++){
+        arr[i]=in.nextInt();
+    }
+    Arrays.sort(arr);
+    List<List<Integer>> res=new ArrayList<>();
+    for(int i=0;i<n-2;i++){
+        if(arr[i]==arr[i-1]){
+            continue;
+        }
+        int l=i+1;
+        int r=n-1;
+        while(l<r){
+            int sum=arr[i]+arr[l]+arr[r];
+        }
+        if(sum==0){
+            res.add(Arrays.asList(arr[i],arr[l],arr[r]));
+            while(l<r && arr[l]==arr[l+1]){
+                l++;
+            }
+            while(l<r && arr[r]==arr[r-1]){
+                r--;
+            }
+            l++;
+            r--;
+        }
+        else if(sum<0){
+            l++;
+        }
+        else{
+           r--;
+        }
+    }
+ }
+ System.out.print(res);
+}
+}
